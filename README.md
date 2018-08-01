@@ -1,8 +1,25 @@
 # Elastic Django!
 
-A little app to demonstrate the basic process for launching a modern Django app on AWS Elastic Beanstalk.
+A little app to demonstrate the basic process for launching a Django app on AWS Elastic Beanstalk. This is NOT production-ready and uses a sqlite3 database on an ephemeral EC2 instance which will be lost on every application update! to make this production ready you must use an external database among many other things. This just demonstrates the basic process and starter config.
 
-### Output of creation for Reference:
+#### Basic process:
+
+1. Create venv, activate and start django project/apps
+2. Install requirements (including `awsebcli`) and create requirements.txt
+3. Create `.ebextensions/django.config` (Handles launching WSGI app)
+4. Create Elastic Beanstalk repo: `eb init -p python-3.6 [repo-name]`
+5. Set up SSH for EC2: `eb init` again or `eb ssh --setup`
+6. Create your EB env: `eb create [env-name]`
+7. Get CNAME with `eb status` and add it to `ALLOWED_HOSTS` in settings.py
+8. Optionally, configure git with `eb use [env-name]` while checked out on the branch you want to tie to that environment
+9. Update settings with `STATIC_ROOT = /static/`
+10. Configure `.ebextensions/db-migrate.config` (Handles initial DB migrations and static files)
+11. Deploy with `eb deploy`
+12. Navigate to CNAME from step 7 and you should see your default Django successful launch page!
+13. Don't forget to terminate your EC2 instance to prevent pointless charges when you're done experimenting! `eb terminate [env-name]`
+14. If you want to recreate it again, just `eb create [env-name]` and pick up with step 7 to update settings accordingly
+
+#### Example output of creation for reference:
 
 ```
 (venv_elastic_django) D:\CFE_Project\venv_elastic_django\src>eb create elastic-django-env
