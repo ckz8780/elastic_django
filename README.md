@@ -4,7 +4,8 @@ A little app to demonstrate the basic process for launching a modern Django app 
 
 ### Output of creation for Reference:
 
-```(venv_elastic_django) D:\CFE_Project\venv_elastic_django\src>eb create elastic-django-env
+```
+(venv_elastic_django) D:\CFE_Project\venv_elastic_django\src>eb create elastic-django-env
 Creating application version archive "app-4ce5-180801_140232".
 Uploading elastic_django/app-4ce5-180801_140232.zip to S3. This may take a while.
 Upload Complete.
@@ -27,7 +28,7 @@ Printing Status:
 2018-08-01 18:04:19    INFO    Created Auto Scaling group named: awseb-e-hqhwn5rady-stack-AWSEBAutoScalingGroup-1O7TS79RRJ944
 2018-08-01 18:04:19    INFO    Waiting for EC2 instances to launch. This may take a few minutes.
 2018-08-01 18:04:34    INFO    Created Auto Scaling group policy named: arn:aws:autoscaling:us-east-1:747609117327:scalingPolicy:cd4dd330-a8fb-4bfd-ab68a6d7b6bda:autoScalingGroupName/awseb-e-hqhwn5rady-stack-AWSEBAutoScalingGroup-1O7TS79RRJ944:policyName/awseb-e-hqhwn5rady-stack-AWSEBAutoScalingScaleUpPy-1MGQ97YDJBWAY
-2018-08-01 18:04:34    INFO    Created Auto Scaling group policy named: arn:aws:autoscaling:us-east-1:747609117327:scalingPolicy:fea5e05c-7852-4207-81956edf008b6:autoScalingGroupName/awseb-e-hqhwn5rady-stack-AWSEBAutoScalingGroup-1O7TS79RRJ944:policyName/awseb-e-hqhwn5rady-stack-AWSEBAutoScalingScaleDowicy-3LOZTQ9G457K
+2018-08-01 18:04:34    INFO    Created Auto Scaling group policy named: arn:aws:autoscaling:us-east-1:747609117327:scalingPolicy:fea5e05c-7852-4207-81956edf008b6:autoScalingGroupName/awseb-e-hqhwn5rady-stack-AWSEBAutoScalingGroup-1O7TS79RRJ944:policyName/awseb-e-hqhwn5rady-stack-AWSEBAutoScalingScaleDownicy-3LOZTQ9G457K
 2018-08-01 18:04:34    INFO    Created CloudWatch alarm named: awseb-e-hqhwn5rady-stack-AWSEBCloudwatchAlarmLow-K5L309OK2KXZ
 2018-08-01 18:04:34    INFO    Created CloudWatch alarm named: awseb-e-hqhwn5rady-stack-AWSEBCloudwatchAlarmHigh-92XIVJ9HTGIB
 2018-08-01 18:06:10    INFO    Successfully launched environment: elastic-django-env
@@ -43,4 +44,5 @@ Environment details for: elastic-django-env
   CNAME: elastic-django-env.ekpriwmptf.us-east-1.elasticbeanstalk.com
   Updated: 2018-08-01 18:06:10.483000+00:00
   Status: Ready
-  Health: Green```
+  Health: Green
+```
